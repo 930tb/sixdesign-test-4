@@ -88,7 +88,7 @@
     /* メニュー本体のスタイル */
     .menu__item {
       text-decoration: none;/* リンクを指すアンダーラインを消す */
-      font-size: 19.5px;
+      font-size: 19px;
       font-weight: 500;
       color: inherit;
       border-bottom: none;
