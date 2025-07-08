@@ -83,12 +83,12 @@
       padding-top: 24px;
       padding-left: 30px;
       padding-bottom: 100%;
-      gap: 14px;
+      gap: 13.8px;
     }
     /* メニュー本体のスタイル */
     .menu__item {
       text-decoration: none;/* リンクを指すアンダーラインを消す */
-      font-size: 19px;
+      font-size: 19.2px;
       font-weight: 500;
       color: inherit;
       border-bottom: none;
