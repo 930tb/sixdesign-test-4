@@ -31,17 +31,17 @@
     }
 
     /* ヘッダのロゴコンテナ */
-    .logo-container-1 {
+    .logo {
       margin-right: auto; /* Flexbox内の左端に寄せる */
     }
     /* ロゴのサイズ調整 */
-    .logo-container-1 img {
+    .logo__image {
       display: block;
       width: 125px;
       height: auto;
     }
     /* ロゴを非表示 */
-    .logo-container-1.hidden {
+    .logo.hidden {
       visibility: hidden;
       opacity: 0;
     }
@@ -74,7 +74,7 @@
       transform: rotate(32deg);
     }
     .hamburger.open .hamburger__line:nth-child(2) {
-      opacity: 0;　 /* 非表示 */
+      opacity: 0; /* 非表示 */
     }
     .hamburger.open .hamburger__line:nth-child(3) {
       top: 8px;
@@ -96,7 +96,7 @@
       color: #333333;
       margin-top: 57px;
       padding-left: 30px;
-      gap: 11.3px;
+      gap: 11.2px;
       z-index: 2000;/* header-containerより上に表示 */
     }
     /* メニュー本体のスタイル */
@@ -107,13 +107,13 @@
       color: inherit; /* 親要素を踏襲 */
     }
     /* メニュー上のロゴのコンテナ */
-    .logo-container-2 {
+    .logo__menu {
       margin-bottom: 13px;
     }
     /* ロゴのサイズを調整 */
-    .logo {
+    .logo__menu__image {
       width: auto; 
-      height: 87px;
+      height: 90px;
     }
     /* メニューオープンで表示 */
      .menu.open {
@@ -144,9 +144,9 @@
 
 <body>
   <header class="header-container">
-    <a href="https://sixdesign.net" id="logoContainer1"></a>
-        <div class="logo-container-1" id="logoContainer1">
-        <img src="https://sixdesign.net/wp-content/uploads/2018/07/logo_sp_250_34.png" alt="ロゴ">
+    <a href="https://sixdesign.net">
+        <div class="logo">
+        <img src="https://sixdesign.net/wp-content/uploads/2018/07/logo_sp_250_34.png" alt="ロゴ" class="logo__image">
         </div>
         </a>
      <div class="hamburger" onclick="toggleMenu()">
@@ -158,8 +158,8 @@
   
   <div class="menu slide-top" id="menu">
     <a href="https://sixdesign.net" class="menu__item">
-        <div class="logo-container-2">
-        <img src="https://sixdesign.net/wp-content/uploads/2018/07/logo_210x2.png" alt="ロゴ" class="logo">
+        <div class="logo__menu">
+        <img src="https://sixdesign.net/wp-content/uploads/2018/07/logo_210x2.png" alt="ロゴ" class="logo__menu__image">
         </div>
           <span class="text">top</span>
         </a>
@@ -192,20 +192,21 @@
         </a>
   </div>
 
-　<script>
+  <script>
   /* JavaScript */
     function toggleMenu() {
     const menu = document.getElementById('menu');
     const trigger = document.querySelector('.hamburger');
-    const logoContainer1 = document.querySelector('.logo-container-1'); /* ロゴコンテナを取得 */
+    const headerLogo = document.querySelector('.logo'); /* ロゴを取得 */
 
+    /* 表示/非表示を切り替える */
     menu.classList.toggle('open');
     trigger.classList.toggle('open');
 
-    /* ロゴコンテナとheader-colorの表示/非表示を切り替える */
-    logoContainer1.classList.toggle('hidden');
+    /* ロゴの表示/非表示を切り替える */
+    headerLogo.classList.toggle('hidden');
   }
-　</script>
+  </script>
 
 </body>
 </html>
